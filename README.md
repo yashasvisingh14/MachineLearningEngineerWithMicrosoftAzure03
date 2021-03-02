@@ -91,7 +91,7 @@ For Inference Configuration we used score.py and env.yml file. These files were 
 ![ss19](https://user-images.githubusercontent.com/64837491/109676867-1e1a7900-7b9f-11eb-922f-3168b1cbc72c.png)
 * Using enable_app_insights, we have enabled AppInsights logging for the Webservice.
 ![ss21](https://user-images.githubusercontent.com/64837491/109678475-a9e0d500-7ba0-11eb-935a-dc2163fc3fb1.png)
-* Testing our deployed model by sending a request and see if the model gives a reponse in the desired format. We will obtain the result in form of {"result": [1, 0]} by running endpoint.py.
+* Testing our deployed model by sending a request and see if the model gives a reponse in the desired format. We will obtain the result in form of {"result": [1, 0]} by running endpoint.py. \
 ![ss20](https://user-images.githubusercontent.com/64837491/109678991-2d9ac180-7ba1-11eb-89e0-a5bf190efffb.png)
 
 ## Screen Recording
