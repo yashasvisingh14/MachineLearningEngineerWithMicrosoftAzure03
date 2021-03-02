@@ -89,17 +89,13 @@ Save the model using joblib.dump(fitted_model, filename="outputs/automl-model.pk
 ![ss18](https://user-images.githubusercontent.com/64837491/109674405-e90d2700-7b9c-11eb-9a9f-d137cd4ebb84.png)
 * Register the model, create an inference config and deploy the model as a web service.
 ACI Module contains functionality for deploying machine learning models as web service endpoints on Azure Container Instances. The recommended deployment pattern is to create a deployment configuration object with the deploy_configuration method and then use it with the deploy method of the Model class as shown below.
-For Inference Configuration we used score.py and env.yml file. These files were downloaded as shown below.
+For Inference Configuration we used score.py and env.yml file. These files were downloaded as shown below. Since the files have been downloaded, define the inference_config by passing score.py and environment. After the files have been downloaded, we can define the inference_config by passing score.py and env.yml.
+![ss19](https://user-images.githubusercontent.com/64837491/109676867-1e1a7900-7b9f-11eb-922f-3168b1cbc72c.png)
+* Using enable_app_insights, we have enabled AppInsights logging for the Webservice.
 
 
-Since the files have been downloaded, define the inference_config by passing score.py and environment.
+* Testing our deployed model by sending a request and see if the model gives a reponse in the desired format. We will obtain the result in form of {"result": [1, 0]} by running endpoint.py.
 
-
-In the above screenshot we can see that the model is successfully deployed.
-
-Now let's test our deployed model by sending a request and see if the model gives a reponse in the desired format. We can achieve this by using the following code in which we send two sets of data and in the response we'll get the target values.
-
-From the above screenshots we can see that our deployed model gives us a response back which is [0,0] . This is the target value for our dataset values which we sent as a request to the model.
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
