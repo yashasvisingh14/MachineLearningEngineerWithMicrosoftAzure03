@@ -70,7 +70,7 @@ In HyperDrive, we control the model training process by adjusting parameters and
     primary_metric_goal=PrimaryMetricGoal.MAXIMIZE,
     max_total_runs=20,
     max_concurrent_runs=4)*
-* Accuracy Achieved = 0.85714
+
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 
