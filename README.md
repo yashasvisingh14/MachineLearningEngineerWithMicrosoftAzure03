@@ -55,9 +55,15 @@ Here, showing RunDetails Widget in Jupyter Notebook after the experiment is comp
 In this project, certain parameters and metrics were used as described above but to gain an improved accuracy we can experiment with them. For classfication experiment we used accuracy as our primary metric which can be replaced with AUC_weighted where AUC is Area under the Receiver Operating Characteristic Curve, the shape of the curve gives an intuition for relationship between TPR and FPR as a function of the classification threshold or decision boundary.For classification experiments, each of the line charts produced for automated ML models can be used to evaluate the model per-class or averaged over all classes. With regression or forecast models we can have different experiment timeout minutes sets and cross validation folds.
 
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+In HyperDrive, we control the model training process by adjusting parameters and finding the configuration of hyperparameters results in the best performance. It uses a fixed machine learning algorithm that is provided.
 
-
+* Created compute cluster using vm_size of "Standard_D2_V2" in provisioning configuration and max_nodes of 4.
+* Specified a parameter sampler i.e RandomParameterSampling, since randomly selects both discrete and continuous hyperparameter values. The benefit of using Random Sampling is that it supports early termination of low peformance runs.
+* Specified a policy early stopping policy i.e Bandit Policy, it helps to automatically terminate poorly performing runs based on slack factor.It improves computational efficiency. The benefit is that policy early terminates any runs where the primary metric is not within the specified slack factor with respect to best performing training run.
+* Created a SKLearn estimator for use with train.py. est = SKLearn(source_directory = "./", compute_target=cpu_cluster, vm_size='STANDARD_D2_V2', entry_script="train.py")
+* Created a HyperDriveConfig using the estimator, hyperparameter sampler, and policy with max_total_runs=20 and max_concurrent_runs=4.Used get_best_run_by_primary_metric() method of the run to select best hyperparameters.\ 
+hyperdrive_config = HyperDriveConfig(estimator=est, hyperparameter_sampling=ps, policy=policy, primary_metric_name='Accuracy', primary_metric_goal=PrimaryMetricGoal.MAXIMIZE, max_total_runs=20, max_concurrent_runs=4)
+* Accuracy Achieved = 0.85714
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 
