@@ -84,16 +84,16 @@ Here, showing RunDetails Widget in Jupyter Notebook after the experiment is comp
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 Below steps are to be followed for model deployment.
 
-Get the best fitted model, save it and display all the properties of the model. 
+* Get the best fitted model, save it and display all the properties of the model like Id, Type and Status. 
+Save the model using joblib.dump(fitted_model, filename="outputs/automl-model.pkl") where the Best AutoML model was saved in pickle format.
+![ss18](https://user-images.githubusercontent.com/64837491/109674405-e90d2700-7b9c-11eb-9a9f-d137cd4ebb84.png)
+* Register the model, create an inference config and deploy the model as a web service.
+ACI Module contains functionality for deploying machine learning models as web service endpoints on Azure Container Instances. The recommended deployment pattern is to create a deployment configuration object with the deploy_configuration method and then use it with the deploy method of the Model class as shown below.
+For Inference Configuration we used score.py and env.yml file. These files were downloaded as shown below.
 
-
-Register the best model. We'll now register our model using Model.register from azureml.core.model. We'll pass our model path, model name and the workspace as the attributes. to Model.register. This can be achieved by Model.register(model_path="best_automl_model.pkl", model_name="best_automl_model", workspace = ws).
-
-Now for our Inference Configuration we'll need two files named as score.py and env.yml file. These files can be downloaded by using these two lines of code. 3.1. best_run.download_file('outputs/scoring_file_v_1_0_0.py', 'score.py') 3.2. best_run.download_file('outputs/conda_env_v_1_0_0.yml', 'myenv.yml')
 
 Since the files have been downloaded, define the inference_config by passing score.py and environment.
 
-Define the deployment_conf. Deploy the model on AciWebservice. Refer to the screenshot below
 
 In the above screenshot we can see that the model is successfully deployed.
 
