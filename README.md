@@ -1,14 +1,11 @@
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
-
-# Your Project Title Here
-
-*TODO:* Write a short introduction to your project.
+# Capstone Project - Machine Learning with Microsoft Azure
+## Brief Overview of the Project
+For this project, we have used a dataset external to the Azure ML ecosystem from Kaggle. It is supported by Azure ML's automl API. In this task, we will train our models on the dataset and deploy the best model. The binary classification model is trained using Logistic Regression algorithm. The automl.ipynb file trains the model using Automated ML and deploys the best model obtained as a webservice. On the other hand, the hyperparameter_tuning.ipynb file trains the model and perform hyperparameter tuning using HyperDrive. AutoML gives us the better accuracy than HyperDrive. 
 
 ## Project Set Up and Installation
-*OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
+In order to set up this project in AzureML, we have to first create a workspace in the Machine Learning Studio with our Azure Subscription. When creating a new workspace, you can either automatically create services needed by the workspace or use existing services. To know more about the multiple ways to set up go through this link.
 
 ## Dataset
-
 ### Overview
 *TODO*: Explain about the data you are using and where you got it from.
 
