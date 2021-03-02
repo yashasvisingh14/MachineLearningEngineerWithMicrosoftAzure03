@@ -7,7 +7,11 @@ In order to set up this project in AzureML, we have to first create a workspace 
 
 ## Dataset
 ### Overview
-For this project, the dataset chosen is the [Heart Disease]() UCI from Kaggle. This database contains 14 columns. The "target" field refers to the presence of heart disease in the patient (0 or 1). \
+For this project, the dataset chosen is the [Heart Disease UCI](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/heart.csv) csv file from Kaggle. The database contains 14 attributes containing integer and float values. The "target" field refers to the presence of heart disease in the patient (0 or 1). \
+
+### Task
+*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+The task here to classify the presence of heart disease in a person and thus a binary classification algorithm is required. All the features is being used for training the model and the column 'target' is considered as the target column representing 0 for no trace of heart disease and 1 for presence of heart disease.
 
 Attribute Information -
 * age
@@ -24,14 +28,11 @@ Attribute Information -
 * number of major vessels (0-3) colored by flourosopy
 * thal: 3 = normal; 6 = fixed defect; 7 = reversable defect
 * target
-
-### Task
-*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
-The task here to classify the presence of heart disease in a person and thus a binary classification algorithm is required. All the features is being used for training the model and the column target is considered as the target variable.
-
+There were no null or missing values present in the dataset.
 
 ### Access
-*TODO*: Explain how you are accessing the data in your workspace.
+For accessing the data in our workspace, we have uploaded the csv file in our Github repository. Using Raw tab we can obtain the raw URL of the file. This URL can be directly accessed using TabularDatasetFactory module. \
+Dataset - https://raw.githubusercontent.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/main/heart.csv
 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
