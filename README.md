@@ -74,9 +74,11 @@ In HyperDrive, we control the model training process by adjusting parameters and
 
 ### Results
 In this experiment, HyperDrive trained the model with an accuracy of 0.85714 which is quite less than AutoML. The screenshot of the Model Summary is being provided.
-In HyperDrive, we can run model with different parameter sampling methods like Grid sampling used to select discrete values over a search space, Bayesian sampling used to to select values based on how previous values improved the training performance. We can also explore early termination policy which automatically terminate poorly performing runs. Early termination improves computational efficiency.
+![ss14](https://user-images.githubusercontent.com/64837491/109671284-f248c480-7b99-11eb-8f78-a561fce5057d.png)
+![ss15](https://user-images.githubusercontent.com/64837491/109671396-0987b200-7b9a-11eb-92d6-db8557c7c2bf.png)
+In HyperDrive, we can run model with different parameter sampling methods like Grid sampling used to select discrete values over a search space, Bayesian sampling used to to select values based on how previous values improved the training performance. We can also explore early termination policy which automatically terminate poorly performing runs. Early termination improves computational efficiency.\
+Here, showing RunDetails Widget in Jupyter Notebook after the experiment is completed.
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
