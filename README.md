@@ -7,10 +7,28 @@ In order to set up this project in AzureML, we have to first create a workspace 
 
 ## Dataset
 ### Overview
-*TODO*: Explain about the data you are using and where you got it from.
+For this project, the dataset chosen is the [Heart Disease]() UCI from Kaggle. This database contains 14 columns. The "target" field refers to the presence of heart disease in the patient (0 or 1). \
+
+Attribute Information -
+* age
+* sex
+* chest pain type (4 values)
+* resting blood pressure
+* serum cholestoral in mg/dl
+* fasting blood sugar > 120 mg/dl
+* resting electrocardiographic results (values 0,1,2)
+* maximum heart rate achieved
+* exercise induced angina
+* oldpeak = ST depression induced by exercise relative to rest
+* the slope of the peak exercise ST segment
+* number of major vessels (0-3) colored by flourosopy
+* thal: 3 = normal; 6 = fixed defect; 7 = reversable defect
+* target
 
 ### Task
 *TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+The task here to classify the presence of heart disease in a person and thus a binary classification algorithm is required. All the features is being used for training the model and the column target is considered as the target variable.
+
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
