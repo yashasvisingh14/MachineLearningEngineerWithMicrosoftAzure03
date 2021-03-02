@@ -61,7 +61,15 @@ In HyperDrive, we control the model training process by adjusting parameters and
 * Specified a parameter sampler i.e RandomParameterSampling, since randomly selects both discrete and continuous hyperparameter values. The benefit of using Random Sampling is that it supports early termination of low peformance runs.
 * Specified a policy early stopping policy i.e Bandit Policy, it helps to automatically terminate poorly performing runs based on slack factor.It improves computational efficiency. The benefit is that policy early terminates any runs where the primary metric is not within the specified slack factor with respect to best performing training run.
 * Created a SKLearn estimator for use with train.py. est = SKLearn(source_directory = "./", compute_target=cpu_cluster, vm_size='STANDARD_D2_V2', entry_script="train.py")
-* Created a HyperDriveConfig using the estimator, hyperparameter sampler, and policy with max_total_runs=20 and max_concurrent_runs=4.Used get_best_run_by_primary_metric() method of the run to select best hyperparameters.
+* Created a HyperDriveConfig using the estimator, hyperparameter sampler, and policy with max_total_runs=20 and max_concurrent_runs=4.Used get_best_run_by_primary_metric() method of the run to select best hyperparameters. \
+*hyperdrive_run_config = HyperDriveConfig(
+    estimator=estimator, 
+    hyperparameter_sampling=ps, 
+    policy=early_termination_policy, 
+    primary_metric_name='Accuracy', 
+    primary_metric_goal=PrimaryMetricGoal.MAXIMIZE,
+    max_total_runs=20,
+    max_concurrent_runs=4)*
 * Accuracy Achieved = 0.85714
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
