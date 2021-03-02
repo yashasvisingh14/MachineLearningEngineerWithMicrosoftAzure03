@@ -34,10 +34,22 @@ For accessing the data in our workspace, we have uploaded the csv file in our Gi
 Dataset - https://raw.githubusercontent.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/main/heart.csv
 
 ## Automated ML
-*TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
+AutoML creates a number of pipelines in parallel that try different algorithms and parameters for us. It gives us the best model which "fits" our data. It trains and tunes the model using the target metric specified. AutoML implements ML solutions without extensive programming knowledge. It saves time and resources. \
+In this project, AutoML was configured using an instance of the AutoMLConfig object. The following parameters were set:
+
+* Task helps us determine the kind of machine learning problem we need to solve. It can be classification, regression, and forecasting.
+* The primary metric parameter determines the metric to be used during model training for optimization. In this case where classification scenario is used we provided accuracy as primary metric.
+* training_data is the training data to be used within the experiment. Here train_data is a TabularDataset loaded from a CSV file.
+* experiment_timeout_minutes defines how long, in minutes, the experiment should continue to run, in our case its 30 minutes.
+* n_cross_validations parameter sets number of cross validations to perform, based on the same number of folds.
+* label_column_name is the name of the label column. Here the target column is 'target' which specifies whether a person has heart disease (1) or not (0).
+* Retrieved and saved the best automl model.
 
 ### Results
-*TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
+*TODO*: What are the results you got with your automated ML model? How could you have improved it?
+In this experiment, AutoML generated a model which uses the MaxAbsScaler and LightGBM algorithm and has shown an accuracy of 1.00.
+In this project, certain parameters and metrics are used but to gain an improved accuracy we can experiment with them. For classfication experiment we used accuracy as our primary metric which can be replaced with AUC_weighted where AUC is Area under the Receiver Operating Characteristic Curve, the shape of the curve gives an intuition for relationship between TPR and FPR as a function of the classification threshold or decision boundary.For classification experiments, each of the line charts produced for automated ML models can be used to evaluate the model per-class or averaged over all classes. With regression or forecast models we can have different experiment timeout minutes sets and cross validation folds. 
+
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
