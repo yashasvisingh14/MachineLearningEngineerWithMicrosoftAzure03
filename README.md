@@ -40,8 +40,7 @@ In this project, AutoML was configured using an instance of the AutoMLConfig obj
 * Task helps us determine the kind of machine learning problem we need to solve. It can be classification, regression, and forecasting.
 * The primary metric parameter determines the metric to be used during model training for optimization. In this case where classification scenario is used we provided accuracy as primary metric.
 * training_data is the training data to be used within the experiment. Here train_data is a TabularDataset loaded from a CSV file.
-* experiment_timeout_minutes defines how long, in minutes, the experiment should continue to run, in our case its 30 minutes.
-* n_cross_validations parameter sets number of cross validations to perform, based on the same number of folds.
+* experiment_timeout_minutes defines how long, in minutes, the experiment should continue to run, in our case its 60 minutes.
 * label_column_name is the name of the label column. Here the target column is 'target' which specifies whether a person has heart disease (1) or not (0).
 * Retrieved and saved the best automl model.
 
