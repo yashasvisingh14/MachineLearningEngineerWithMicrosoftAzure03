@@ -81,9 +81,7 @@ Here, showing RunDetails Widget in Jupyter Notebook after the experiment is comp
 ![ss17](https://user-images.githubusercontent.com/64837491/109672490-1a84f300-7b9b-11eb-9c69-d6c5a6290c1f.png)
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
-Below steps are to be followed for model deployment.
-
+The steps to be followed for Deployment.
 * Get the best fitted model, save it and display all the properties of the model like Id, Type and Status. 
 Save the model using joblib.dump(fitted_model, filename="outputs/automl-model.pkl") where the Best AutoML model was saved in pickle format.
 ![ss18](https://user-images.githubusercontent.com/64837491/109674405-e90d2700-7b9c-11eb-9a9f-d137cd4ebb84.png)
@@ -92,10 +90,9 @@ ACI Module contains functionality for deploying machine learning models as web s
 For Inference Configuration we used score.py and env.yml file. These files were downloaded as shown below. Since the files have been downloaded, define the inference_config by passing score.py and environment. After the files have been downloaded, we can define the inference_config by passing score.py and env.yml.
 ![ss19](https://user-images.githubusercontent.com/64837491/109676867-1e1a7900-7b9f-11eb-922f-3168b1cbc72c.png)
 * Using enable_app_insights, we have enabled AppInsights logging for the Webservice.
-
-
+![ss21](https://user-images.githubusercontent.com/64837491/109678475-a9e0d500-7ba0-11eb-935a-dc2163fc3fb1.png)
 * Testing our deployed model by sending a request and see if the model gives a reponse in the desired format. We will obtain the result in form of {"result": [1, 0]} by running endpoint.py.
-
+![ss20](https://user-images.githubusercontent.com/64837491/109678991-2d9ac180-7ba1-11eb-89e0-a5bf190efffb.png)
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
