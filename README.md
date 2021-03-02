@@ -78,16 +78,31 @@ In this experiment, HyperDrive trained the model with an accuracy of 0.85714 whi
 ![ss15](https://user-images.githubusercontent.com/64837491/109671396-0987b200-7b9a-11eb-92d6-db8557c7c2bf.png)
 In HyperDrive, we can run model with different parameter sampling methods like Grid sampling used to select discrete values over a search space, Bayesian sampling used to to select values based on how previous values improved the training performance. We can also explore early termination policy which automatically terminate poorly performing runs. Early termination improves computational efficiency.\
 Here, showing RunDetails Widget in Jupyter Notebook after the experiment is completed.
-
+![ss17](https://user-images.githubusercontent.com/64837491/109672490-1a84f300-7b9b-11eb-9c69-d6c5a6290c1f.png)
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+Below steps are to be followed for model deployment.
+
+Get the best fitted model, save it and display all the properties of the model. 
+
+
+Register the best model. We'll now register our model using Model.register from azureml.core.model. We'll pass our model path, model name and the workspace as the attributes. to Model.register. This can be achieved by Model.register(model_path="best_automl_model.pkl", model_name="best_automl_model", workspace = ws).
+
+Now for our Inference Configuration we'll need two files named as score.py and env.yml file. These files can be downloaded by using these two lines of code. 3.1. best_run.download_file('outputs/scoring_file_v_1_0_0.py', 'score.py') 3.2. best_run.download_file('outputs/conda_env_v_1_0_0.yml', 'myenv.yml')
+
+Since the files have been downloaded, define the inference_config by passing score.py and environment.
+
+Define the deployment_conf. Deploy the model on AciWebservice. Refer to the screenshot below
+
+In the above screenshot we can see that the model is successfully deployed.
+
+Now let's test our deployed model by sending a request and see if the model gives a reponse in the desired format. We can achieve this by using the following code in which we send two sets of data and in the response we'll get the target values.
+
+From the above screenshots we can see that our deployed model gives us a response back which is [0,0] . This is the target value for our dataset values which we sent as a request to the model.
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
 - A working model
 - Demo of the deployed  model
 - Demo of a sample request sent to the endpoint and its response
-
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
