@@ -83,7 +83,7 @@ Here, showing RunDetails Widget in Jupyter Notebook after the experiment is comp
 ## Model Deployment
 The steps to be followed for Deployment.
 * Get the best fitted model, save it and display all the properties of the model like Id, Type and Status. 
-Save the model using joblib.dump(fitted_model, filename="outputs/automl-model.pkl") where the Best AutoML model was saved in pickle format.
+Save the model using  joblib.dump(model,'outputs/model.joblib') where the Best AutoML model was saved in joblib format.
 ![ss18](https://user-images.githubusercontent.com/64837491/109674405-e90d2700-7b9c-11eb-9a9f-d137cd4ebb84.png)
 * Register the model, create an inference config and deploy the model as a web service.
 ACI Module contains functionality for deploying machine learning models as web service endpoints on Azure Container Instances. The recommended deployment pattern is to create a deployment configuration object with the deploy_configuration method and then use it with the deploy method of the Model class as shown below.
