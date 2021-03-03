@@ -75,7 +75,7 @@ The best run generated the following values for parameters-
 * n_estimators=100 - The number of trees in the forest.
 * n_jobs=1 - Number of CPU cores used when parallelizing over classes.
 * random_state=None - Used when solver == ‘sag’, ‘saga’ or ‘liblinear’ to shuffle the data.
-* verbose=-10 - Verbosity etc
+* verbose=-10 - Verbosity etc \
 ![imp4](https://user-images.githubusercontent.com/64837491/109859683-42e81c80-7c83-11eb-9dd6-aac2ebefb0ee.png)
 ### Improvments in Future
 In this project, certain parameters and metrics were used as described above but to gain an improved accuracy we can experiment with them. For classfication experiment we used accuracy as our primary metric which can be replaced with AUC_weighted where AUC is Area under the Receiver Operating Characteristic Curve, the shape of the curve gives an intuition for relationship between TPR and FPR as a function of the classification threshold or decision boundary.For classification experiments, each of the line charts produced for automated ML models can be used to evaluate the model per-class or averaged over all classes. With regression or forecast models we can have different experiment timeout minutes sets and cross validation folds.
