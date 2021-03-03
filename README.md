@@ -8,9 +8,11 @@
   * [Access]( https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#access)
 * [Automated ML](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#automated-ml)
   * [Results]( https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#results)
+  * [Best Parameters]()
   * [Improvement in Future]( https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#improvments-in-future)
 * [Hyperparameter Tuning](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#hyperparameter-tuning)
   * [Results](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#results-1)
+  * [Best Parameters]()
   * [Improvements in Future]( https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#improvments-in-future-1)
 * [Model Deployment](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#model-deployment)
 * [Screen Recording](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#screen-recording) 
@@ -67,6 +69,14 @@ In this experiment, AutoML generated a best fitted model MaxAbsScaler and LightG
 ![ss7](https://user-images.githubusercontent.com/64837491/109667701-6aad8680-7b96-11eb-861d-3f4ce1257de5.png)
 Here, showing RunDetails Widget in Jupyter Notebook after the experiment is completed.
 ![ss3](https://user-images.githubusercontent.com/64837491/109667914-a5afba00-7b96-11eb-9cc1-2bfe7880ac08.png)
+### Best Parameters
+The best run generated the following values for parameters-
+* learning_rate=0.1 - A tuning parameter in an optimization algorithm that determines the step size at each iteration.
+* n_estimators=100 - The number of trees in the forest.
+* n_jobs=1 - Number of CPU cores used when parallelizing over classes.
+* random_state=None - Used when solver == ‘sag’, ‘saga’ or ‘liblinear’ to shuffle the data.
+* verbose=-10 - Verbosity etc
+
 ### Improvments in Future
 In this project, certain parameters and metrics were used as described above but to gain an improved accuracy we can experiment with them. For classfication experiment we used accuracy as our primary metric which can be replaced with AUC_weighted where AUC is Area under the Receiver Operating Characteristic Curve, the shape of the curve gives an intuition for relationship between TPR and FPR as a function of the classification threshold or decision boundary.For classification experiments, each of the line charts produced for automated ML models can be used to evaluate the model per-class or averaged over all classes. With regression or forecast models we can have different experiment timeout minutes sets and cross validation folds.
 
@@ -91,12 +101,17 @@ In HyperDrive, we control the model training process by adjusting parameters and
  ![ss16](https://user-images.githubusercontent.com/64837491/109670390-15bf3f80-7b99-11eb-8a39-36aa96f544d9.png)
 
 ### Results
-In this experiment, HyperDrive trained the model with an accuracy of 0.85714 which is quite less than AutoML.The best run generated the following values for hyperparameters ['--C', '0.056669921024075975', '--max_iter', '150']. The screenshot of the Model Summary is being provided.
+In this experiment, HyperDrive trained the model with an accuracy of 0.85714 which is quite less than AutoML. The screenshot of the Model Summary is being provided.
 ![hh4](https://user-images.githubusercontent.com/64837491/109699878-16ff6500-7bb7-11eb-8b65-062b8ceec609.png)
 Here, we obtained visualization of different Run Numbers in terms of their Accuracy and other one shows hyperparameters used in our model with Accuracy.
 ![hh6](https://user-images.githubusercontent.com/64837491/109699789-018a3b00-7bb7-11eb-9fca-13c7547678f7.png)
 Here, showing RunDetails Widget in Jupyter Notebook after the experiment is completed.
 ![hh1](https://user-images.githubusercontent.com/64837491/109699824-0b13a300-7bb7-11eb-9b2d-fb216e8ce459.png)
+### Best Parameters
+The best run generated the following values for hyperparameters-
+* '--C', '0.056669921024075975' - Inverse of regularization strength
+* '--max_iter', '150' - maximum number of iterations taken to converge
+
 ### Improvments in Future
 In HyperDrive, we can run model with different parameter sampling methods like Grid sampling used to select discrete values over a search space, Bayesian sampling used to to select values based on how previous values improved the training performance. We can also explore early termination policy which automatically terminate poorly performing runs. Early termination improves computational efficiency. For Logistic Regression, we used C and max_iter as our best suited hyperparameters but it will change based on different algorithms like learning rate for training a neural network, C and sigma hyperparameters for support vector machines etc.
 
