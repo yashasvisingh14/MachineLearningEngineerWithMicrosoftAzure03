@@ -1,7 +1,7 @@
 # Capstone Project - Machine Learning with Microsoft Azure
 ## Table of Contents
-* Overview
-* Set Up and Installation
+* [Overview](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#brief-overview-of-the-project)
+* [Set Up and Installation]()
 * Dataset
   * Overview 
   * Task
