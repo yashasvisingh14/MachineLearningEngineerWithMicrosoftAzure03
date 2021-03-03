@@ -89,7 +89,7 @@ In HyperDrive, we control the model training process by adjusting parameters and
  ![ss16](https://user-images.githubusercontent.com/64837491/109670390-15bf3f80-7b99-11eb-8a39-36aa96f544d9.png)
 
 ### Results
-In this experiment, HyperDrive trained the model with an accuracy of 0.85714 which is quite less than AutoML. The screenshot of the Model Summary is being provided.
+In this experiment, HyperDrive trained the model with an accuracy of 0.85714 which is quite less than AutoML.The best run generated the following values for hyperparameters ['--C', '0.056669921024075975', '--max_iter', '150']. The screenshot of the Model Summary is being provided.
 ![hh4](https://user-images.githubusercontent.com/64837491/109699878-16ff6500-7bb7-11eb-8b65-062b8ceec609.png)
 Here, we obtained visualization of different Run Numbers in terms of their Accuracy and other one shows hyperparameters used in our model with Accuracy.
 ![hh6](https://user-images.githubusercontent.com/64837491/109699789-018a3b00-7bb7-11eb-9fca-13c7547678f7.png)
