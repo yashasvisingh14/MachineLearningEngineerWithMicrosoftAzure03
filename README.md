@@ -57,7 +57,7 @@ In this project, AutoML was configured using an instance of the AutoMLConfig obj
 * training_data is the training data to be used within the experiment. Here train_data is a TabularDataset loaded from a CSV file.
 * experiment_timeout_minutes defines how long, in minutes, the experiment should continue to run, in our case its 60 minutes.
 * label_column_name is the name of the label column. Here the target column is 'target' which specifies whether a person has heart disease (1) or not (0).
-* Retrieved and saved the best automl model.
+* Retrieved and saved the best automl model(MaxAbsScaler and LightGBM).
 
 ### Results
 In this experiment, AutoML generated a best fitted model MaxAbsScaler and LightGBM algorithm and has shown an accuracy of 1.00. For some datasets, it is possible for several classifiers to achieve perfect scores. The screenshot of the Best Model Summary is being provided.
@@ -73,7 +73,7 @@ In HyperDrive, we control the model training process by adjusting parameters and
 
 * Created compute cluster using vm_size of "Standard_D2_V2" in provisioning configuration and max_nodes of 4.
 * Specified a parameter sampler i.e RandomParameterSampling, since randomly selects both discrete and continuous hyperparameter values. The benefit of using Random Sampling is that it supports early termination of low peformance runs.
-* The two hyperparameters tuned were C and max_iter where max_iter represents maximum number of iterations taken to converge and C is inverse of regularization strength where we create model which underfit or overfit the data according to the values of C.A larger C means less regularization and smaller C means better regularization. With choice(discrete hyperparameter) '--max_iter' takes one of the values (50, 100, 150, 200, 250) and with '--C' : uniform(0.0, 1.0)(continuous hyperparameter) returns a value uniformly distributed between low(0.0) and high(1.0). 
+* The two hyperparameters tuned were C and max_iter where max_iter represents maximum number of iterations taken to converge and C is inverse of regularization strength where we create model which underfit or overfit the data according to the values of C. A larger C means less regularization and smaller C means better regularization. With choice(discrete hyperparameter) '--max_iter' takes one of the values (50, 100, 150, 200, 250) and with '--C' : uniform(0.0, 1.0)(continuous hyperparameter) returns a value uniformly distributed between low(0.0) and high(1.0). 
 * Specified a policy early stopping policy i.e Bandit Policy, it helps to automatically terminate poorly performing runs based on slack factor.It improves computational efficiency. The benefit is that policy early terminates any runs where the primary metric is not within the specified slack factor with respect to best performing training run.
 * The primary metric parameter determines the metric to be used during model training for optimization. In this case where classification scenario is used we provided accuracy as primary metric.
 * Created a SKLearn estimator for use with train.py. est = SKLearn(source_directory = "./", compute_target=cpu_cluster, vm_size='STANDARD_D2_V2', entry_script="train.py")
@@ -96,7 +96,7 @@ Here, we obtained visualization of different Run Numbers in terms of their Accur
 Here, showing RunDetails Widget in Jupyter Notebook after the experiment is completed.
 ![hh1](https://user-images.githubusercontent.com/64837491/109699824-0b13a300-7bb7-11eb-9b2d-fb216e8ce459.png)
 ### Improvments in Future
-In HyperDrive, we can run model with different parameter sampling methods like Grid sampling used to select discrete values over a search space, Bayesian sampling used to to select values based on how previous values improved the training performance. We can also explore early termination policy which automatically terminate poorly performing runs. Early termination improves computational efficiency.
+In HyperDrive, we can run model with different parameter sampling methods like Grid sampling used to select discrete values over a search space, Bayesian sampling used to to select values based on how previous values improved the training performance. We can also explore early termination policy which automatically terminate poorly performing runs. Early termination improves computational efficiency. For Logistic Regression, we used C and max_iter as our best suited hyperparameters but it will change based on different algorithms like learning rate for training a neural network, C and sigma hyperparameters for support vector machines etc.
 
 
 ## Model Deployment
