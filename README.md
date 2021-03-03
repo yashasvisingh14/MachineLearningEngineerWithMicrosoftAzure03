@@ -1,19 +1,19 @@
 # Capstone Project - Machine Learning with Microsoft Azure
 ## Table of Contents
 * [Overview](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#brief-overview-of-the-project)
-* [Set Up and Installation]()
-* Dataset
-  * Overview 
-  * Task
-  * Access
-* Automated ML
-  * Results
-  * Improvement in Future
-* Hyperparameter Tuning
-  * Results
-  * Improvements in Future
-* Model Deployment
-* Screen Recording 
+* [Set Up and Installation](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#project-set-up-and-installation)
+* [Dataset](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#dataset)
+  * [Overview]( https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#overview) 
+  * [Task]( https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#task)
+  * [Access]( https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#access)
+* [Automated ML](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#automated-ml)
+  * [Results]( https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#results)
+  * [Improvement in Future]( https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#improvments-in-future)
+* [Hyperparameter Tuning](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#hyperparameter-tuning)
+  * [Results](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#results-1)
+  * [Improvements in Future]( https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#improvments-in-future-1)
+* [Model Deployment](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#model-deployment)
+* [Screen Recording](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#screen-recording) 
 ## Brief Overview of the Project
 For this project, we have used a dataset external to the Azure ML ecosystem from Kaggle. It is supported by Azure ML's automl API. In this task, we will train our models on the dataset and deploy the best model. The binary classification model is trained using Logistic Regression algorithm. The [automl.ipynb](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/automl.ipynb) file trains the model using Automated ML and deploys the best model obtained as a webservice. On the other hand, the [hyperparameter_tuning.ipynb](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/hyperparameter_tuning.ipynb) file trains the model and perform hyperparameter tuning using HyperDrive. The AutoML gives us the better accuracy for our model than HyperDrive. 
 
