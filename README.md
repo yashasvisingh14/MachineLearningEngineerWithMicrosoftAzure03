@@ -14,6 +14,8 @@
   * [Improvements in Future]( https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#improvments-in-future-1)
 * [Model Deployment](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#model-deployment)
 * [Screen Recording](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/README.md#screen-recording) 
+## Architectural Diagram
+![AD (1)](https://user-images.githubusercontent.com/64837491/109812996-c2112c80-7c52-11eb-94fb-aaa3d530efb1.jpeg)
 ## Brief Overview of the Project
 For this project, we have used a dataset external to the Azure ML ecosystem from Kaggle. It is supported by Azure ML's automl API. In this task, we will train our models on the dataset and deploy the best model. The binary classification model is trained using Logistic Regression algorithm. The [automl.ipynb](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/automl.ipynb) file trains the model using Automated ML and deploys the best model obtained as a webservice. On the other hand, the [hyperparameter_tuning.ipynb](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/hyperparameter_tuning.ipynb) file trains the model and perform hyperparameter tuning using HyperDrive. The AutoML gives us the better accuracy for our model than HyperDrive. 
 
