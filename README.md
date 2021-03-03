@@ -1,4 +1,19 @@
 # Capstone Project - Machine Learning with Microsoft Azure
+## Table of Contents
+* Overview
+* Set Up and Installation
+* Dataset
+  * Overview 
+  * Task
+  * Access
+* Automated ML
+  * Results
+  * Improvement in Future
+* Hyperparameter Tuning
+  * Results
+  * Improvements in Future
+* Model Deployment
+* Screen Recording 
 ## Brief Overview of the Project
 For this project, we have used a dataset external to the Azure ML ecosystem from Kaggle. It is supported by Azure ML's automl API. In this task, we will train our models on the dataset and deploy the best model. The binary classification model is trained using Logistic Regression algorithm. The [automl.ipynb](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/automl.ipynb) file trains the model using Automated ML and deploys the best model obtained as a webservice. On the other hand, the [hyperparameter_tuning.ipynb](https://github.com/yashasvisingh14/MachineLearningEngineerWithMicrosoftAzure03/blob/main/hyperparameter_tuning.ipynb) file trains the model and perform hyperparameter tuning using HyperDrive. The AutoML gives us the better accuracy for our model than HyperDrive. 
 
@@ -50,7 +65,7 @@ In this experiment, AutoML generated a model which uses the MaxAbsScaler and Lig
 ![ss7](https://user-images.githubusercontent.com/64837491/109667701-6aad8680-7b96-11eb-861d-3f4ce1257de5.png)
 Here, showing RunDetails Widget in Jupyter Notebook after the experiment is completed.
 ![ss3](https://user-images.githubusercontent.com/64837491/109667914-a5afba00-7b96-11eb-9cc1-2bfe7880ac08.png)
-
+### Improvments in Future
 In this project, certain parameters and metrics were used as described above but to gain an improved accuracy we can experiment with them. For classfication experiment we used accuracy as our primary metric which can be replaced with AUC_weighted where AUC is Area under the Receiver Operating Characteristic Curve, the shape of the curve gives an intuition for relationship between TPR and FPR as a function of the classification threshold or decision boundary.For classification experiments, each of the line charts produced for automated ML models can be used to evaluate the model per-class or averaged over all classes. With regression or forecast models we can have different experiment timeout minutes sets and cross validation folds.
 
 ## Hyperparameter Tuning
@@ -76,9 +91,11 @@ In this experiment, HyperDrive trained the model with an accuracy of 0.85714 whi
 ![hh4](https://user-images.githubusercontent.com/64837491/109699878-16ff6500-7bb7-11eb-8b65-062b8ceec609.png)
 Here, we obtained visualization of different Run Numbers in terms of their Accuracy and other one shows hyperparameters used in our model with Accuracy.
 ![hh6](https://user-images.githubusercontent.com/64837491/109699789-018a3b00-7bb7-11eb-9fca-13c7547678f7.png)
-In HyperDrive, we can run model with different parameter sampling methods like Grid sampling used to select discrete values over a search space, Bayesian sampling used to to select values based on how previous values improved the training performance. We can also explore early termination policy which automatically terminate poorly performing runs. Early termination improves computational efficiency.\
 Here, showing RunDetails Widget in Jupyter Notebook after the experiment is completed.
 ![hh1](https://user-images.githubusercontent.com/64837491/109699824-0b13a300-7bb7-11eb-9b2d-fb216e8ce459.png)
+### Improvments in Future
+In HyperDrive, we can run model with different parameter sampling methods like Grid sampling used to select discrete values over a search space, Bayesian sampling used to to select values based on how previous values improved the training performance. We can also explore early termination policy which automatically terminate poorly performing runs. Early termination improves computational efficiency.
+
 
 ## Model Deployment
 The steps to be followed for Deployment.
