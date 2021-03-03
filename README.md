@@ -76,7 +76,7 @@ The best run generated the following values for parameters-
 * n_jobs=1 - Number of CPU cores used when parallelizing over classes.
 * random_state=None - Used when solver == ‘sag’, ‘saga’ or ‘liblinear’ to shuffle the data.
 * verbose=-10 - Verbosity etc
-![imp](https://user-images.githubusercontent.com/64837491/109857565-d66c1e00-7c80-11eb-8e8f-65c06d662028.png)
+![imp4](https://user-images.githubusercontent.com/64837491/109859683-42e81c80-7c83-11eb-9dd6-aac2ebefb0ee.png)
 ### Improvments in Future
 In this project, certain parameters and metrics were used as described above but to gain an improved accuracy we can experiment with them. For classfication experiment we used accuracy as our primary metric which can be replaced with AUC_weighted where AUC is Area under the Receiver Operating Characteristic Curve, the shape of the curve gives an intuition for relationship between TPR and FPR as a function of the classification threshold or decision boundary.For classification experiments, each of the line charts produced for automated ML models can be used to evaluate the model per-class or averaged over all classes. With regression or forecast models we can have different experiment timeout minutes sets and cross validation folds.
 
@@ -110,8 +110,8 @@ Here, showing RunDetails Widget in Jupyter Notebook after the experiment is comp
 ### Best Parameters
 The best run generated the following values for hyperparameters-
 * '--C', '0.056669921024075975' - Inverse of regularization strength
-* '--max_iter', '150' - maximum number of iterations taken to converge
-![imp1](https://user-images.githubusercontent.com/64837491/109857576-d835e180-7c80-11eb-901f-e95d971da660.png)
+* '--max_iter', '150' - maximum number of iterations taken to converge \
+![imp5](https://user-images.githubusercontent.com/64837491/109859686-44194980-7c83-11eb-99e0-aff5db93887d.png)
 ### Improvments in Future
 In HyperDrive, we can run model with different parameter sampling methods like Grid sampling used to select discrete values over a search space, Bayesian sampling used to to select values based on how previous values improved the training performance. We can also explore early termination policy which automatically terminate poorly performing runs. Early termination improves computational efficiency. For Logistic Regression, we used C and max_iter as our best suited hyperparameters but it will change based on different algorithms like learning rate for training a neural network, C and sigma hyperparameters for support vector machines etc.
 
