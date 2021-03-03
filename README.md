@@ -73,7 +73,7 @@ In HyperDrive, we control the model training process by adjusting parameters and
 
 * Created compute cluster using vm_size of "Standard_D2_V2" in provisioning configuration and max_nodes of 4.
 * Specified a parameter sampler i.e RandomParameterSampling, since randomly selects both discrete and continuous hyperparameter values. The benefit of using Random Sampling is that it supports early termination of low peformance runs.
-* The two hyperparameters tuned were C and max_iter where max_iter represents maximum number of iterations taken to converge and C is regularization parameter where we create model which underfit or overfit the data according to the values of C. With choice(discrete hyperparameter) '--max_iter' takes one of the values (50, 100, 150, 200, 250) and with '--C' : uniform(0.0, 1.0)(continuous hyperparameter) returns a value uniformly distributed between low(0.0) and high(1.0). 
+* The two hyperparameters tuned were C and max_iter where max_iter represents maximum number of iterations taken to converge and C is inverse of regularization strength where we create model which underfit or overfit the data according to the values of C.A larger C means less regularization and smaller C means better regularization. With choice(discrete hyperparameter) '--max_iter' takes one of the values (50, 100, 150, 200, 250) and with '--C' : uniform(0.0, 1.0)(continuous hyperparameter) returns a value uniformly distributed between low(0.0) and high(1.0). 
 * Specified a policy early stopping policy i.e Bandit Policy, it helps to automatically terminate poorly performing runs based on slack factor.It improves computational efficiency. The benefit is that policy early terminates any runs where the primary metric is not within the specified slack factor with respect to best performing training run.
 * The primary metric parameter determines the metric to be used during model training for optimization. In this case where classification scenario is used we provided accuracy as primary metric.
 * Created a SKLearn estimator for use with train.py. est = SKLearn(source_directory = "./", compute_target=cpu_cluster, vm_size='STANDARD_D2_V2', entry_script="train.py")
@@ -110,7 +110,7 @@ For Inference Configuration we used score.py and env.yml file. These files were 
 ![ss19](https://user-images.githubusercontent.com/64837491/109676867-1e1a7900-7b9f-11eb-922f-3168b1cbc72c.png)
 * Using enable_app_insights, we have enabled AppInsights logging for the Webservice.
 ![ss21](https://user-images.githubusercontent.com/64837491/109678475-a9e0d500-7ba0-11eb-935a-dc2163fc3fb1.png)
-* Testing our deployed model by sending a request and see if the model gives a reponse in the desired format. We will obtain the result in form of {"result": [1, 0]} by running endpoint.py. \
+* Testing our deployed model by sending a request and see if the model gives a reponse in the desired format. The script endpoint.py containing the two sample data instances is used to interact with the endpoint with the help of scoring URI and the key of the deployment. We will obtain the result in form of {"result": [1, 0]} by running endpoint.py. \
 ![ss20](https://user-images.githubusercontent.com/64837491/109678991-2d9ac180-7ba1-11eb-89e0-a5bf190efffb.png)
 
 ## Screen Recording
