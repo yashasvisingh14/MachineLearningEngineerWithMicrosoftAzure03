@@ -60,7 +60,7 @@ In this project, AutoML was configured using an instance of the AutoMLConfig obj
 * Retrieved and saved the best automl model.
 
 ### Results
-In this experiment, AutoML generated a model which uses the MaxAbsScaler and LightGBM algorithm and has shown an accuracy of 1.00. For some datasets, it is possible for several classifiers to achieve perfect scores. The screenshot of the Best Model Summary is being provided.
+In this experiment, AutoML generated a best fitted model MaxAbsScaler and LightGBM algorithm and has shown an accuracy of 1.00. For some datasets, it is possible for several classifiers to achieve perfect scores. The screenshot of the Best Model Summary is being provided.
 ![ss4](https://user-images.githubusercontent.com/64837491/109666771-84020300-7b95-11eb-9388-5001b02dfde7.png)
 ![ss7](https://user-images.githubusercontent.com/64837491/109667701-6aad8680-7b96-11eb-861d-3f4ce1257de5.png)
 Here, showing RunDetails Widget in Jupyter Notebook after the experiment is completed.
