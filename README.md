@@ -131,7 +131,3 @@ For Inference Configuration we used score.py and env.yml file. These files were 
 ![imp2](https://user-images.githubusercontent.com/64837491/109858586-ffd97980-7c81-11eb-9414-653175d569be.png)
 ![imp3](https://user-images.githubusercontent.com/64837491/109858592-010aa680-7c82-11eb-8e43-46d9ec1593f0.png)\
 ![ss20](https://user-images.githubusercontent.com/64837491/109678991-2d9ac180-7ba1-11eb-89e0-a5bf190efffb.png)
-
-## Screen Recording
-[Click Here](https://youtu.be/hptyJQBFk1Q) \
-I was not able to directly screencast so I recorded it. Since I am using an old Desktop right now. I have tried several apps before and the one you mentioned but It doesnt work appropriately or doesnt support it.
